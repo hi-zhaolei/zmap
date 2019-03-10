@@ -1,0 +1,36 @@
+{
+  "name": "zmap",
+  "version": "0.0.1",
+  "description": "A common map API library that supports a variety of basic map services at home and abroad",
+  "main": "lib/index.js",
+  "directories": {
+    "examples": "examples"
+  },
+  "scripts": {
+    "build": "rollup -c",
+    "push": "npm version patch && git push"
+  },
+  "keywords": [
+    "map",
+		"api",
+		"library",
+    "amap",
+    "googlemaps"
+  ],
+  "author": "zhaolei",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/runtime": "^7.2.0",
+    "@babel/plugin-transform-runtime": "^7.2.0",
+    "@babel/preset-env": "^7.2.3",
+    "@babel/preset-stage-2": "^7.0.0",
+    "rollup": "^0.68.1",
+    "rollup-plugin-babel": "^4.1.0",
+    "rollup-plugin-commonjs": "^9.2.0",
+    "rollup-plugin-filesize": "^5.0.1",
+    "rollup-plugin-node-resolve": "^4.0.0",
+    "rollup-plugin-uglify": "^6.0.0"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "root": true,
+  "parserOptions": {
+  },
+  "extends": [
+  ],
+  "globals": {
+  }
+}
