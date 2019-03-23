@@ -67,6 +67,6 @@ export function upperFirstLetter(word) {
  * 
  * @param {Object} param0 
  */
-export function isChineseCoord ({ lng, lat }) {
+export function isCoordInChina ({ lng, lat }) {
   return lng >= 73.66 && lng <= 135.05 && lat >= 3.86 && lat <= 53.55
 }

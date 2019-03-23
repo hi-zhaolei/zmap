@@ -1,7 +1,7 @@
 
 import mapAPI from './index'
 import {
-  isChineseCoord
+  isCoordInChina
 } from './utils'
 
 /**
@@ -13,7 +13,7 @@ import {
 function createMap(container, options = {}, callback) {
   // logic to decide use which map service by initial option lng & lat
   if (options.lng && options.lat) {
-    if (isChineseCoord(options)) {
+    if (isCoordInChina(options)) {
       // domestic
       createAMap(container, options, callback)
     } else {
