@@ -22,12 +22,7 @@ function createMap(container, options = {}, callback) {
     }
   } else {
     // Use AMap initialization by default
-    if (options.foreignArea) {
-      createGoogleMaps(container, options, callback)
-    } else {
-      createAMap(container, options, callback)
-    }
-    
+		createAMap(container, options, callback)
   }
 }
 

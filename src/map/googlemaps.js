@@ -258,6 +258,12 @@ const apis = {
       initGMap(container, options, callback)
     }
   },
+	createPoint () {
+
+	},
+	createSize () {
+
+	},
   /**
    * 设置中心点
    * 
@@ -372,7 +378,7 @@ const apis = {
       return;
     }
     if (opt.offset) {
-      opt.anchorPoint = new AMap.Pixel(opt.offset.x, opt.offset.y)
+      opt.anchorPoint = new google.maps.Point(opt.offset.x, opt.offset.y)
     }
     
     if (opt.g_label) {
@@ -680,34 +686,27 @@ const apis = {
   _eventHandler (shape, opt) {
     const event = google.maps.event
     // bind event handlers
-    if (opt.clickHandle) {
-      event.addListener(shape, 'click', opt.clickHandle)
-      event.addListener(shape, 'touchend', opt.clickHandle)
-    }
-    if (opt.dblclickHandle) {
-      event.addListener(shape, 'dblclick', opt.dblclickHandle)
-    }
-    if (opt.rightclickHandle) {
-      event.addListener(shape, 'rightclick', opt.rightclickHandle)
-    }
-    if (opt.dragstartHandle) {
-      event.addListener(shape, 'dragstart', opt.dragstartHandle)
-    }
-    if (opt.dragHandle) {
-      event.addListener(shape, 'drag', opt.dragHandle)
-    }
-    if (opt.dragendHandle) {
-      event.addListener(shape, 'dragend', opt.dragendHandle)
-    }
-    if (opt.idleHandle) {
-      event.addListener(shape, 'idle', opt.idleHandle)
-    }
-    if (opt.zoom_changed) {
-      event.addListener(shape, 'zoom_changed', opt.zoom_changed)
-    }
-    if (opt.mousemoveHandle) {
-      event.addListener(shape, 'mousemove', opt.mousemoveHandle)
-    }
+		conts events = [
+			'click',
+			'touchend',
+			'dblclick',
+			'rightclick',
+			'rightclick',
+			'dragstart',
+			'drag',
+			'idle',
+			'dragend',
+			'zoom_changed',
+			'mousemove'
+		]
+		for(let key in opt) {
+			if (opt[key + 'handle']) {
+				event.addListener(shape, key, opt[key + 'handle'])
+				if (key === 'click') {
+					event.addListener(shape, 'touchend', opt.clickHandle)
+				}
+			}
+		}
   }
 } 
 
