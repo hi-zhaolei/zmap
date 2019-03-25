@@ -59,7 +59,7 @@ const apis = {
     // TODO: 根据edit和type判断加载的libraries
     loadScript(URL, {
       v: '1.4.6',
-      key: 'bcd582c5effbabfb1a5c8afbc646981c&',
+      key: options.key,
       callback: 'init',
       plugin: [
         options.plugins === 'drawing' ? 'AMap.MouseTool' : '',

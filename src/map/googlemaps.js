@@ -249,7 +249,7 @@ const apis = {
     }
     if (this.script) document.body.removeChild(this.script)
     this.script = loadScript(URL, {
-      key: 'AIzaSyBdPOvDhhGUnP7Rvfa4-Pf-T6wSV0eYKgc',
+      key: options.key,
       callback: 'init',
       language: getLang(options.language),
       libraries: options.libraries
